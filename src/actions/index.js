@@ -1,4 +1,4 @@
-import { FETCH_POSTS, FETCH_USER } from "./types";
+import { FETCH_POSTS, FETCH_USERS } from "./types";
 import JsonPlaceHolder from "../apis/JsonPlaceHolder";
 
 export const fetchPosts = () => async dispatch => {
@@ -9,10 +9,10 @@ export const fetchPosts = () => async dispatch => {
   });
 };
 
-export const fetchUser = id => async dispatch => {
-  const response = await JsonPlaceHolder.get(`/users/1`);
+export const fetchUsers = () => async dispatch => {
+  const response = await JsonPlaceHolder.get(`/users`);
   dispatch({
-    type: FETCH_USER,
+    type: FETCH_USERS,
     payload: response.data
   });
 };
